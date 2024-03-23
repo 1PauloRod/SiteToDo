@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    border: 0;
+    background: #F5F5F5;
+    font-family: "OCR A Std", monospace, fz;
+}
+
+.main-card{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.title-card{
+    position: absolute;
+    top: 20%;
+    padding: 10px;
+    width: 350px;
+}
+
+.title-card h1{
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.title-card h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.title-card p{
+    padding: 2.1em; 
+}
+
+.btn-get-started{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 60%;
+    text-decoration: none;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 25%;
+    height: 10%;
+    text-decoration: none;
+    color: black;
+}
+
+.btn-get-started:hover{
+    color: yellow;
+    background: black;
+    border-color: yellow;
+}
+
+.btn-login{
+    position: absolute;
+    top: 72%;
+}
+
+.btn-login a{
+    color: black;
+}
+
+.btn-login a:hover{
+    color: rgb(229, 229, 4);
+}
+
+

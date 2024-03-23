@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    border: 0;
+    background: #F5F5F5;
+    font-family: "OCR A Std", monospace, fz;
+}
+
+.main-card{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.form-register{
+    position: absolute;
+    top: 5%;
+}
+
+.title-register{
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.inputs-register{
+    padding: 20px;
+}
+
+.inputs-register input{
+    border-bottom: 1px solid black;
+    margin: 20px;
+    outline: none;
+}
+
+.input-first-last-name{
+    display: inline;
+}
+
+.input-user-email-pass{
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-register{
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: 500;
+    width: 35%;
+    padding: 15px;
+}
+
+.btn-register:hover{
+    cursor: pointer;
+    background: black;
+    color: yellow;
+    border-color: yellow;
+}
+
+.message-error-input::placeholder{
+    color: red;
+}
+
+.form-register p{
+    padding-top: 25px;
+}
+
+.form-register p a{
+    color: black;
+}
+
+.form-register p a:hover{
+    color: rgb(214, 214, 17);
+}

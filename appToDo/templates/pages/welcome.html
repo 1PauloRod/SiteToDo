@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/welcome.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Welcome</title>
+{% endblock %}
+
+{% block content %}
+    <div class="main-card">
+        <div class="title-card">
+            <h1>Welcome</h1>
+            <h3>to our To Do List!</h3>
+            <p> simple to-do list to organize and facilitate your routine for more productivity.</p>
+        </div>
+
+        <a class="btn-get-started" href="{% url 'register' %}">Get Started</a>
+        <p class="btn-login">Have login? <a href="{% url 'login' %}">Sign in!</a></p>
+    </div>
+{% endblock %}
+

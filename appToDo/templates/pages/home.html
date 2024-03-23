@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" text="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>home</title>
+{% endblock%}
+
+{% block content %}
+    <div class="main-card">
+        <h1 class="title-user">Olá, {{user.username}}</h1>
+        <form class="add-task" action="{% url 'home' %}" method="POST">
+            {% csrf_token %}
+            {% if messages %}
+                {% for message in messages %}
+                    <input class="add-task-error" name="add-task" type="text" placeholder="{{message}}" autocomplete="off">
+                {% endfor %}
+            {% else %}
+            <input name="add-task" type="text" placeholder="Add a new task" autocomplete="off">
+            {% endif %}
+            
+            <button class="btn-add">+</button>
+        </form>
+        
+        <div class="tasks-card">
+            <ul class="task-list">
+                {% for task in tasks %}
+                    <li class="task-item">
+                            {{task}} <a class="btn-remove-task" href= "{% url "delete_task" task.id %}">Delete</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="delete-all-tasks">
+            <a href="{% url 'delete_all_tasks' %}">Delete all</a>
+        </div>
+
+        <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'script/change_task_item_color.js' %}"></script>
+{% endblock %}

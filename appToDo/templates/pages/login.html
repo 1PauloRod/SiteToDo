@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block content %}
+    <div class="main-card">
+        <form class="form-login" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <h1 class="title-login">Login</h1>
+            <div class="inputs-login">
+                <input name="username" type="text" placeholder="username" required autocomplete="off">
+                <input name="password" type="password" placeholder="password" required autocomplete="off">
+            </div>
+            <p>Don't have an account? <a href="{% url 'register' %}">Sign up!</a></p>
+            <input class="btn-login" type="submit" value="Login!">
+        
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="error-message">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block title %}
+<title>Register</title>
+{% endblock %}
+
+{% block content %}
+    <div class="main-card">
+
+        <form class="form-register" action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            <h1 class="title-register">Register</h1>
+            <div class="inputs-register">
+                <div class="input-first-last-name">
+                    
+                    <input name="first_name" type="text" placeholder="first name" value="{{user_first_name}}" required autocomplete="off">
+                    <input name="last_name" type="text" placeholder="last name" value="{{user_last_name}}" required autocomplete="off">
+                </div>
+
+                <div class="input-user-email-pass">
+                    {% if username_message_error %}
+                        <input class="message-error-input" name="username" type="text" placeholder="{{username_message_error}}" required autocomplete="off">
+                    {% elif exist_username_message_error %}
+                        <input class="message-error-input" name="username" type="text" placeholder="{{exist_username_message_error}}" required autocomplete="off">
+                    {% else %}
+                        <input name="username" type="text" placeholder="username" value="{{user_username}}" required autocomplete="off">
+                    {% endif %}
+                    {% if exist_email_message_error %}
+                        <input class="message-error-input" name="email" type="email" placeholder="{{exist_email_message_error}}" required autocomplete="off">
+                    {% else %}
+                        <input name="email" type="email" placeholder="email" value="{{user_email}}" required autocomplete="off">
+                    {% endif %}    
+                    {% if password_message_error %}
+                        <input class="message-error-input" name="password" type="password" placeholder="{{password_message_error}}" required autocomplete="off">
+                    {% else %}
+                        <input name="password" type="password" placeholder="password" required autocomplete="off">    
+                    {% endif %}    
+                    {% if confirm_password_message_error %}
+                        <input class="message-error-input" name="confirm_password" type="password" placeholder="{{confirm_password_message_error}}" required autocomplete="off">
+                    {% else %}
+                        <input name="confirm_password" type="password" placeholder="confirm password" required autocomplete="off">   
+                    {% endif %}    
+
+                </div>
+            </div>
+            <input class="btn-register" type="submit" value="Register!">
+            <p>Got an account? Please <a href="{% url 'login' %}">log in!</a></p>
+        </form>
+    </div>
+{% endblock %}

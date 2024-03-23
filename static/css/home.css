@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    border: 0;
+    background: #F5F5F5;
+    font-family: "OCR A Std", monospace, fz;
+}
+
+.main-card{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.title-user{
+    margin-top: 50px;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.add-task{
+    padding-top: 50px;
+    position: relative;
+}
+
+.add-task input{
+    width: 60%;
+    padding: 1.25rem;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.btn-add{
+    position: absolute;
+    left: 77.8%;
+    height: 54%;
+    width: 10%;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.btn-add:hover{
+    cursor: pointer;
+    background: black;
+    color: yellow;
+    border-color: yellow;
+}
+
+.add-task-error::placeholder{
+    color: red;
+}
+
+.tasks-card{
+    position: relative;
+    width: 580px;
+    height: 300px;
+    overflow-y: auto;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, 0);
+    
+}
+.tasks-card::-webkit-scrollbar{
+    width: 10px;
+}
+
+.tasks-card::-webkit-scrollbar-thumb{
+    background-color: rgb(174, 168, 168);
+    border-radius: 20px;
+}
+
+.task-list{
+    display: flex;
+    flex-direction: column;
+    padding: 0; 
+    margin: 0;
+    justify-content:end;
+}
+
+.task-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin-bottom: 10px;
+    font-size: 20px;
+    width: 98%;
+    font-weight: 500;
+    border-radius: 15px;
+}
+
+.task-item.clicked{
+    background: green;
+}
+
+.task-item:hover{
+    background: rgb(174, 168, 168);
+    transition: .3s;
+}
+
+.task-to-do{
+    margin-top: 10px;
+}
+
+.btn-remove-task{
+    font-size: 20px;
+    padding: 10px;
+    background: rgb(162, 11, 11);
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 15px;
+    color: black;
+}
+
+.btn-remove-task:hover{
+    background: red;
+
+}
+
+.delete-all-tasks{
+    margin-top: 60px;
+    width: 100%;
+}
+
+.delete-all-tasks a{
+    color: black;
+    text-decoration: none;
+}
+
+.delete-all-tasks a:hover{
+    text-decoration: underline;
+}
+
+.logout-button{
+    position: absolute;
+    left: 90%;
+}
+
+.logout-button{
+    color: black;
+    text-decoration: none;
+}
+
+.logout-button:hover{
+    text-decoration: underline;
+}
